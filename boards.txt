@@ -684,19 +684,19 @@ RemRam.menu.upload_method.serialMethod.upload.tool=serial_upload
 
 ZEK.name=ZEKENG boards
 
-ZEK.build.vid=0x0001
-ZEK.build.pid=0x0001
-ZEK.vid.0=0x0001
-ZEK.pid.0=0x0001
+ZEK.build.vid=0x0483
+ZEK.build.pid=0x5711
+ZEK.vid.0=0x0483
+ZEK.pid.0=0x5711
 
 ZEK.build.core=arduino
-ZEK.build.board=ZEK
+ZEK.build.board=ZEK_DT72_REV1
 ZEK.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
 
 # DT72_REV1_STM32F030C8 board
 # Support: Serial1 (USART2 on PA3, PA2)
 ZEK.menu.pnum.DT72_REV1_STM32F030C8=DT72_REV1_STM32F030C8
-ZEK.menu.pnum.DT72_REV1_STM32F030C8.node="No_mass_storage_for_this_board_Use_STLink_upload_method"
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.node=NODE_L073RZ
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.upload.maximum_size=65536
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.upload.maximum_data_size=8192
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.mcu=cortex-m0
@@ -704,17 +704,12 @@ ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.board=DT72_REV1_STM32F030C8
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.series=STM32F0xx
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.product_line=STM32F030x8
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.variant=DT72_REV1_STM32F030C8
-
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # Upload menu
-ZEK.menu.upload_method.MassStorage=Mass Storage
-ZEK.menu.upload_method.MassStorage.upload.protocol=
-ZEK.menu.upload_method.MassStorage.upload.tool=massStorageCopy
-
 ZEK.menu.upload_method.STLink=STLink
 ZEK.menu.upload_method.STLink.upload.protocol=STLink
-ZEK.menu.upload_method.STLink.upload.tool=stlink_uploa
+ZEK.menu.upload_method.STLink.upload.tool=stlink_upload
 
 ################################################################################
 # Serialx activation
