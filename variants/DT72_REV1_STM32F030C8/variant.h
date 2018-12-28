@@ -99,6 +99,44 @@ extern const PinName digitalPin[];
 #define PIN_SERIAL_RX           0
 #define PIN_SERIAL_TX           1
 
+// PINS from DT-7.2_Rev1_Schematics.pdf
+#define AI_2V048_REF      (PA0)
+#define AI_DIM_CTRL       (PA4)
+#define AI_COLOR_CTRL     (PA5)
+#define AI_PTC            (PA6)
+
+#define PWM_WORM_TIM1_CH1 (PA8)
+#define PWM_COLD_TIM1_CH2 (PA9)
+
+#define DISP_C1           (PB8)
+#define DISP_C2           (PB9)
+#define DISP_C3           (PB10)
+#define DISP_C4           (PB11)
+#define DISP_C5           (PB12)
+#define DISP_C6           (PB13)
+#define DISP_C7           (PB14)
+#define DISP_C8           (PB15)
+
+#define DISP_R1           (PC13)
+#define DISP_R2           (PC14)
+#define DISP_R3           (PC15)
+
+#define UART2_RS485_DE    (PA1)
+
+#define TP1               (PA10)
+#define TP2               (PA11)
+#define TP3               (PA12)
+#define TP4               (PB0)
+#define TP5               (PB1)
+#define TP6               (PB2)
+
+#define LED_RED_HEAT      (PB3)
+
+#define DEBUG_LED         (PA15)
+
+#define BUTTON1           (PB4)
+#define BUTTON2           (PB5)
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
