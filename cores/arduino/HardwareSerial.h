@@ -104,6 +104,7 @@ class HardwareSerial : public Stream
     HardwareSerial(uint32_t _rx, uint32_t _tx);
     HardwareSerial(PinName _rx, PinName _tx);
     HardwareSerial(void* peripheral);
+    virtual ~HardwareSerial() { }
     void begin(unsigned long baud) { begin(baud, SERIAL_8N1); }
     void begin(unsigned long, uint8_t);
     void end();

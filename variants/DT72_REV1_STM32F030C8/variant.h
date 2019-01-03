@@ -36,45 +36,44 @@ extern const PinName digitalPin[];
 #define PB7     0
 #define PB6     1
 #define PA1     2
-#define PA7     3
-#define PA8     4
-#define PA9     5
-#define PA10    6
-#define PA11    7
-#define PA12    8
-#define PA15    9
-#define PB0     10
-#define PB1     11
-#define PB2     12
-#define PB3     13
-#define PF7     14
-#define PF6     15
-#define PA2     16
-#define PA3     17
-#define PB4     18
-#define PB5     19
-#define PB8     20
-#define PB9     21
-#define PB10    22
-#define PB11    23
-#define PB12    24
-#define PB13    25
-#define PB14    26
-#define PB15    27
-#define PC13    28
-#define PC14    29
-#define PC15    30
-#define PA0     31
-#define PA4     32
-#define PA5     33
-#define PA6     34
-#define PA7     35
+#define PA8     3
+#define PA9     4
+#define PA10    5
+#define PA11    6
+#define PA12    7
+#define PA15    8
+#define PB0     9
+#define PB1     10
+#define PB2     11
+#define PB3     12
+#define PF7     13
+#define PF6     14
+#define PA2     15
+#define PA3     16
+#define PB4     17
+#define PB5     18
+#define PB8     19
+#define PB9     20
+#define PB10    21
+#define PB11    22
+#define PB12    23
+#define PB13    24
+#define PB14    25
+#define PB15    26
+#define PC13    27
+#define PC14    28
+#define PC15    29
+#define PA0     30
+#define PA4     31
+#define PA5     32
+#define PA6     33
+#define PA7     34
 
 // This must be a literal
-#define NUM_DIGITAL_PINS        36
+#define NUM_DIGITAL_PINS        35
 // This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
 #define NUM_ANALOG_INPUTS       5
-#define NUM_ANALOG_FIRST        31
+#define NUM_ANALOG_FIRST        30
 
 // On-board LED pin number
 #define LED_BUILTIN             PA15
@@ -136,6 +135,11 @@ extern const PinName digitalPin[];
 
 #define BUTTON1           (PB4)
 #define BUTTON2           (PB5)
+
+
+#define PWM_FREQUENCY     14*1000 // 16kHz
+#define PWM_RESOLUTION		8
+
 
 #ifdef __cplusplus
 } // extern "C"
