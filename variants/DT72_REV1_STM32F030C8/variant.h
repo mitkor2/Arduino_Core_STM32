@@ -137,8 +137,10 @@ extern const PinName digitalPin[];
 #define BUTTON2           (PB5)
 
 
-#define PWM_FREQUENCY     14*1000 // 16kHz
-#define PWM_RESOLUTION		8
+//#define PWM_FREQUENCY     	14*1000 // 16kHz
+#define PWM_FREQUENCY     	1000 // 16kHz
+#define PWM_RESOLUTION		10
+#define PWM_MAX_DUTY_CYCLE          1023
 
 
 #ifdef __cplusplus

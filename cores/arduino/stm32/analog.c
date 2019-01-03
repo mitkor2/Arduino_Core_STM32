@@ -694,6 +694,32 @@ void pwm_start(PinName pin, uint32_t clock_freq,
   TIM_OC_InitTypeDef timConfig = {};
   uint32_t timChannel;
 
+  if (!do_init)
+  {
+	  TIM_TypeDef *instance = pinmap_peripheral(pin, PinMap_PWM);
+
+	  if (instance == NP)
+	  {
+		  return;
+	  }
+
+	  timChannel = get_pwm_channel(pin);
+
+	  if (!IS_TIM_CHANNELS(timChannel))
+	  {
+		  return;
+	  }
+
+	  switch (timChannel)
+	  {
+		  case TIM_CHANNEL_1: instance->CCR1 = value; return;
+		  case TIM_CHANNEL_2: instance->CCR2 = value; return;
+		  case TIM_CHANNEL_3: instance->CCR3 = value; return;
+		  case TIM_CHANNEL_4: instance->CCR4 = value; return;
+		  default: return;
+	  }
+  }
+
   /* Compute the prescaler value to have TIM counter clock equal to clock_freq Hz */
   timHandle.Instance               = pinmap_peripheral(pin, PinMap_PWM);
   if (timHandle.Instance == NP) return;
