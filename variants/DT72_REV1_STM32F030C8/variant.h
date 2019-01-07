@@ -138,7 +138,7 @@ extern const PinName digitalPin[];
 
 
 //#define PWM_FREQUENCY     	14*1000 // 16kHz
-#define PWM_FREQUENCY     	1000 // 16kHz
+#define PWM_FREQUENCY     	7*1000 // 16kHz
 #define PWM_RESOLUTION		10
 #define PWM_MAX_DUTY_CYCLE          1023
 
