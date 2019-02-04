@@ -706,6 +706,19 @@ ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.product_line=STM32F030x8
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.variant=DT72_REV1_STM32F030C8
 ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.cmsis_lib_gcc=arm_cortexM0l_math
 
+# DT72_REV2_STM32F030C8 board
+# Support: Serial1 (USART2 on PA3, PA2)
+ZEK.menu.pnum.DT72_REV1_STM32F030C8=DT72_REV2_STM32F030C8
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.node=NODE_L073RZ
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.upload.maximum_size=65536
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.upload.maximum_data_size=8192
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.mcu=cortex-m0
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.board=DT72_REV2_STM32F030C8
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.series=STM32F0xx
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.product_line=STM32F030x8
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.variant=DT72_REV2_STM32F030C8
+ZEK.menu.pnum.DT72_REV1_STM32F030C8.build.cmsis_lib_gcc=arm_cortexM0l_math
+
 # Upload menu
 ZEK.menu.upload_method.STLink=STLink
 ZEK.menu.upload_method.STLink.upload.protocol=STLink
