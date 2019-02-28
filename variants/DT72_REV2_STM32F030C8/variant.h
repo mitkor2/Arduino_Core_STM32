@@ -124,16 +124,18 @@ extern const PinName digitalPin[];
 
 #define UART2_RS485_DE    (PA1)
 
-#define TP1               (PA10)
-#define TP2               (PA11)
-#define TP3               (PA12)
+#define TP1               (PA10) // ENABLE
+#define TP2               (PA11) // DEBUG_LED
+#define TP3               (PA12) // LED_RED_HEAT
 
-#define DEBUG_LED         (PA15)
+#define DEBUG_LED         (PA15) // SPI_CS_
 
-#define BUTTON1           (PB0)
-#define BUTTON2           (PB1)
+#define BUTTON1           (PB0) // WLED_WORM_CURRENT (TODO analog)
+#define BUTTON2           (PB1) // 4 WLED_COLD_CURRENT (TODO analog)
+//#define BUTTON2				(PB5) // Rev2 of the board
 
-#define DMX512_DETECT	  (PB2)
+#define DMX512_DETECT	  (PB2) // BUTTON1
+
 
 
 #define SPI_MISO			(PB4)

@@ -84,8 +84,9 @@ class SPISettings {
       } else if(SPI_MODE3 == dataMode) {
         dMode = SPI_MODE_3;
       }
-
+      pinCS = -1;
     }
+
     SPISettings() {
       pinCS = -1;
       clk = SPI_SPEED_CLOCK_DEFAULT;
@@ -93,6 +94,7 @@ class SPISettings {
       msb = 1;
       dMode = SPI_MODE_0;
     }
+
   private:
     int16_t pinCS;      //CS pin associated to the configuration
     uint32_t clk;       //specifies the spi bus maximum clock speed
