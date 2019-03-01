@@ -43,48 +43,48 @@ extern const PinName digitalPin[];
 #define PA11    7
 #define PA12    8
 #define PA15    9
-#define PB0     10
-#define PB1     11
-#define PB2     12
-#define PB3     13
-#define PF7     14
-#define PF6     15
-#define PA2     16
-#define PA3     17
-#define PB4     18
-#define PB5     19
-#define PB8     20
-#define PB9     21
-#define PB10    22
-#define PB11    23
-#define PB12    24
-#define PB13    25
-#define PB14    26
-#define PB15    27
-#define PC13    28
-#define PC14    29
-#define PC15    30
-#define PA0     31
-#define PA4     32
-#define PA5     33
-#define PA6     34
+#define PB2     10
+#define PB3     11
+#define PF7     12
+#define PF6     13
+#define PA2     14
+#define PA3     15
+#define PB4     16
+#define PB5     17
+#define PB8     18
+#define PB9     19
+#define PB10    20
+#define PB11    21
+#define PB12    22
+#define PB13    23
+#define PB14    24
+#define PB15    25
+#define PC13    26
+#define PC14    27
+#define PC15    28
+#define PA0     29
+#define PA4     30
+#define PA5     31
+#define PA6     32
+#define PB0     33
+#define PB1     34
 
 
 // This must be a literal
 #define NUM_DIGITAL_PINS        35
 // This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
-#define NUM_ANALOG_INPUTS       4
-#define NUM_ANALOG_FIRST        31
+#define NUM_ANALOG_INPUTS       6
+#define NUM_ANALOG_FIRST        29
 
 // On-board LED pin number
-#define LED_BUILTIN             PA15
-#define LED_RED                 LED_BUILTIN
+#define LED_BUILTIN             DEBUG_LED
+#define LED_RED                 DEBUG_LED
 
 // On-board user button
 // TODO define new button pins
-#define USER_BTN                PB0
-#define USER_BTN1               PB0
-#define USER_BTN2               PB1
+#define USER_BTN                BUTTON1
+#define USER_BTN1               BUTTON1
+#define USER_BTN2               BUTTON2
 
 // Timer Definitions
 // Do not use timer used by PWM pins when possible. See PinMap_PWM.
@@ -97,51 +97,54 @@ extern const PinName digitalPin[];
 #define SERIAL_UART_INSTANCE    2 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
-#define PIN_SERIAL_RX           0
-#define PIN_SERIAL_TX           1
+#define PIN_SERIAL_RX           UART1_DBG_TX
+#define PIN_SERIAL_TX           UART1_DBG_RX
 
 // PINS from DT-7.2_Rev1_Schematics.pdf
-#define AI_2V048_REF      (PA0)
-#define AI_DIM_CTRL       (PA4)
-#define AI_COLOR_CTRL     (PA5)
-#define AI_PTC            (PA6)
+#define AI_2V048_REF      		(PA0)
+#define AI_DIM_CTRL       		(PA4)
+#define AI_COLOR_CTRL     		(PA5)
+#define AI_PTC            		(PA6)
 
-#define PWM_WORM_TIM1_CH1 (PA8)
-#define PWM_COLD_TIM1_CH2 (PA9)
+#define PWM_WORM_TIM1_CH1 		(PA8)
+#define PWM_COLD_TIM1_CH2 		(PA9)
 
-#define DISP_C1           (PB8)
-#define DISP_C2           (PB9)
-#define DISP_C3           (PB10)
-#define DISP_C4           (PB11)
-#define DISP_C5           (PB12)
-#define DISP_C6           (PB13)
-#define DISP_C7           (PB14)
-#define DISP_C8           (PB15)
+#define DISP_C1           		(PB8)
+#define DISP_C2           		(PB9)
+#define DISP_C3           		(PB10)
+#define DISP_C4           		(PB11)
+#define DISP_C5           		(PB12)
+#define DISP_C6           		(PB13)
+#define DISP_C7           		(PB14)
+#define DISP_C8           		(PB15)
 
-#define DISP_R1           (PC13)
-#define DISP_R2           (PC14)
-#define DISP_R3           (PC15)
+#define DISP_R1           		(PC13)
+#define DISP_R2           		(PC14)
+#define DISP_R3           		(PC15)
 
-#define UART2_RS485_DE    (PA1)
+#define UART2_RS485_DE    		(PA1)
+#define UART2_RS485_TX    		(PA2)
+#define UART2_RS485_RX    		(PA3)
 
-#define TP1               (PA10) // ENABLE
-#define TP2               (PA11) // DEBUG_LED
-#define TP3               (PA12) // LED_RED_HEAT
+#define ENABLE        			(PA10)
+#define DEBUG_LED         		(PA11)
+#define LED_RED_HEAT      		(PA12)
 
-#define DEBUG_LED         (PA15) // SPI_CS_
+#define SPI_NSS         		(PA15)
 
-#define BUTTON1           (PB0) // WLED_WORM_CURRENT (TODO analog)
-#define BUTTON2           (PB1) // 4 WLED_COLD_CURRENT (TODO analog)
-//#define BUTTON2				(PB5) // Rev2 of the board
+#define WLED_WORM_CURRENT		(PB0)
+#define WLED_COLD_CURRENT   	(PB1)
 
-#define DMX512_DETECT	  (PB2) // BUTTON1
+#define BUTTON1	  				(PB2)
+#define BUTTON2					(PB5)
 
+#define SPI_MISO				(PB4)
+#define SPI_MOSI				(PA7)
+#define SPI_SCK					(PB3)
 
+#define UART1_DBG_TX			(PB6)
+#define UART1_DBG_RX			(PB7)
 
-#define SPI_MISO			(PB4)
-#define SPI_MOSI			(PA7)
-#define SPI_SCK				(PB3)
-#define SPI_CS_				DEBUG_LED//(PB5)
 
 #define PWM_FREQUENCY     			(14 * 1000)
 #define PWM_RESOLUTION				(10)

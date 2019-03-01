@@ -34,32 +34,31 @@ const PinName digitalPin[] = {
   PA_11, //D7
   PA_12, //D8
   PA_15, //D9
-  PB_0,  //D10
-  PB_1,  //D11
-  PB_2,  //D12
-  PB_3,  //D13/SPI_SCK
-  PF_7,  //D14/SDA
-  PF_6,  //D15/SCL
-  PA_2,  //D16/TX1
-  PA_3,  //D17/RX1
-  PB_4,  //D18/SPI_MISO
-  PB_5,  //D19
-  PB_8,  //D20
-  PB_9,  //D21
-  PB_10, //D22
-  PB_11, //D23
-  PB_12, //D24
-  PB_13, //D25
-  PB_14, //D26
-  PB_15, //D27
-  PC_13, //D28
-  PC_14, //D29
-  PC_15, //D30
-  PA_0,  //D31/A0
-  PA_4,  //D32/A1
-  PA_5,  //D33/A2
-  PA_6,  //D34/A3
-
+  PB_2,  //D10
+  PB_3,  //D11/SPI_SCK
+  PF_7,  //D12/SDA
+  PF_6,  //D13/SCL
+  PA_2,  //D14/TX1
+  PA_3,  //D15/RX1
+  PB_4,  //D16/SPI_MISO
+  PB_5,  //D17
+  PB_8,  //D18
+  PB_9,  //D19
+  PB_10, //D20
+  PB_11, //D21
+  PB_12, //D22
+  PB_13, //D23
+  PB_14, //D24
+  PB_15, //D25
+  PC_13, //D26
+  PC_14, //D27
+  PC_15, //D28
+  PA_0,  //D29/A0
+  PA_4,  //D30/A1
+  PA_5,  //D31/A2
+  PA_6,  //D32/A3
+  PB_0,  //D33/A4
+  PB_1,  //D34/A5
 };
 
 #ifdef __cplusplus
