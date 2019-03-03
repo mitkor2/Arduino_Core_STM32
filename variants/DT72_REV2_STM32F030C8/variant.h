@@ -94,11 +94,11 @@ extern const PinName digitalPin[];
 #define TIMER_SERVO             TIM3  //TODO: advanced-control timers don't work
 
 // UART Definitions
-#define SERIAL_UART_INSTANCE    2 //Connected to ST-Link
+#define SERIAL_UART_INSTANCE    1 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
-#define PIN_SERIAL_RX           UART1_DBG_TX
-#define PIN_SERIAL_TX           UART1_DBG_RX
+#define PIN_SERIAL_RX           UART1_DBG_RX
+#define PIN_SERIAL_TX			UART1_DBG_TX
 
 // PINS from DT-7.2_Rev1_Schematics.pdf
 #define AI_2V048_REF      		(PA0)
@@ -138,9 +138,9 @@ extern const PinName digitalPin[];
 #define BUTTON1	  				(PB2)
 #define BUTTON2					(PB5)
 
-#define SPI_MISO				(PB4)
-#define SPI_MOSI				(PA7)
-#define SPI_SCK					(PB3)
+#define PIN_SPI_MISO			(PB4)
+#define PIN_SPI_MOSI			(PA7)
+#define PIN_SPI_SCK				(PB3)
 
 #define UART1_DBG_TX			(PB6)
 #define UART1_DBG_RX			(PB7)
@@ -180,7 +180,7 @@ extern const PinName digitalPin[];
 //                            pins are NOT connected to anything by default.
 #define SERIAL_PORT_MONITOR         Serial
 #define SERIAL_PORT_HARDWARE        Serial
-#define SERIAL_PORT_HARDWARE_OPEN   Serial1
+#define SERIAL_PORT_HARDWARE_OPEN   Serial2
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
