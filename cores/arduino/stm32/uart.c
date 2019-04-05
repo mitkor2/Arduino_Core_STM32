@@ -272,7 +272,7 @@ void uart_init(serial_t *obj)
   huart->Init.HwFlowCtl    = UART_HWCONTROL_NONE;
   huart->Init.OverSampling = UART_OVERSAMPLING_16;
 #if !defined(STM32F1xx) && !defined(STM32F2xx) && !defined(STM32F4xx)\
- && !defined(STM32L1xx)
+ && !defined(STM32L1xx) && !defined(STM32F0xx)
   huart->AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
 #endif
 #ifdef UART_ONE_BIT_SAMPLE_DISABLE

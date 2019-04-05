@@ -151,7 +151,8 @@ extern const PinName digitalPin[];
 #define PWM_MAX_DUTY_CYCLE          ((1 << PWM_RESOLUTION) - 1)
 
 
-
+#define PIN_WIRE_SDA			(PF7)
+#define PIN_WIRE_SCL			(PF6)
 
 #ifdef __cplusplus
 } // extern "C"
@@ -178,7 +179,7 @@ extern const PinName digitalPin[];
 //                            pins are NOT connected to anything by default.
 #define SERIAL_PORT_MONITOR         Serial
 #define SERIAL_PORT_HARDWARE        Serial
-#define SERIAL_PORT_HARDWARE_OPEN   Serial2
+//#define SERIAL_PORT_HARDWARE_OPEN   Serial2
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
