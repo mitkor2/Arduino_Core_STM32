@@ -109,7 +109,9 @@ extern const PinName digitalPin[];
 #define PIN_WIRE_SDA			(PB9)
 #define PIN_WIRE_SCL			(PB8)
 
-
+#define ENABLE_HWSERIAL3
+#define ENABLE_HWSERIAL4
+#define ENABLE_HWSERIAL5
 
 #ifdef __cplusplus
 } // extern "C"
