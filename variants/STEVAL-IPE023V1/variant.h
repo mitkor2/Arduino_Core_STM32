@@ -80,6 +80,9 @@ extern const PinName digitalPin[];
 
 #define LED_BUILTIN             LED_RED
 
+#define LED_ON					(1)
+#define LED_OFF					(0)
+
 // On-board user button
 //#define USER_BTN                PB0
 

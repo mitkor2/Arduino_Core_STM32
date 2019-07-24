@@ -104,7 +104,7 @@ void IWatchdogClass::get(uint32_t* timeout, uint32_t* window)
   if(timeout != NULL) {
     uint32_t prescaler = 0;
     uint32_t reload = 0;
-    //uint32_t win = 0;
+    uint32_t win = 0;
     float base = (1000000.0 / LSI_VALUE);
 
     while(LL_IWDG_IsActiveFlag_RVU(IWDG));
