@@ -113,12 +113,8 @@ extern const PinName digitalPin[];
 #define AI_NTC     				(PA5)
 
 #define PWM_WORM_TIM1_CH1 		(PA8)
-
-#ifdef DOUBLE_CHANNEL
 #define PWM_WORM_TIM1_CH2 		(PA9)
-#else
 #define FAN_PWM			 		(PA9)
-#endif
 
 #define SPI2_NSS           		(PB12)
 #define PIN_SPI2_SCK       		(PB13)

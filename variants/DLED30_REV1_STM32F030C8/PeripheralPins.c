@@ -30,7 +30,7 @@
  */
 #include "Arduino.h"
 #include "PeripheralPins.h"
-
+#include "stm32f0xx_hal_conf.h"
 /* =====
  * Note: Commented lines are alternative possibilities which are not used per default.
  *       If you change them, you will have to know what you do
@@ -54,14 +54,14 @@ const PinMap PinMap_ADC[] = {
 
 #ifdef HAL_I2C_MODULE_ENABLED
 const PinMap PinMap_I2C_SDA[] = {
-  {PB_9, I2C2, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULL, GPIO_AF1_I2C2)},
+  {PB_9, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULL, GPIO_AF1_I2C1)},
   {NC,    NP,    0}
 };
 #endif
 
 #ifdef HAL_I2C_MODULE_ENABLED
 const PinMap PinMap_I2C_SCL[] = {
-  {PB_8, I2C2, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULL, GPIO_AF1_I2C2)},
+  {PB_8, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULL, GPIO_AF1_I2C1)},
   {NC,    NP,    0}
 };
 #endif
@@ -119,7 +119,7 @@ const PinMap PinMap_SPI_MOSI[] = {
 #ifdef HAL_SPI_MODULE_ENABLED
 const PinMap PinMap_SPI_MISO[] = {
   {PB_4,   SPI1, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF0_SPI1)},
-  {PB_14,   SPI2, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF0_SPI1)},
+  {PB_14,  SPI2, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF0_SPI1)},
   {NC,    NP,    0}
 };
 #endif
