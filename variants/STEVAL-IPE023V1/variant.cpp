@@ -25,34 +25,38 @@ extern "C" {
 // Pin number
 const PinName digitalPin[] = {
   PA_3,  // D0
-  PB_0,  // D1
-  PB_1,  // D2
-  PB_2,  // D3
-  PB_5,  // D4
-  PB_6,  // D5 - USART1_TX
-  PB_7,  // D6 - USART1_RX
-  PB_8,  // D7 - I2C1_SCL
-  PB_9,  // D8 - I2C1_SDA
-  PB_10, // D9 - USART3_TX
-  PB_11, // D10 - USART3_RX
-  PB_12, // D11
-  PB_13, // D12 - SPI2_SCK
-  PB_14, // D13 - SPI2_MISO
-  PB_15, // D14 - SPI2_MOSI
-  PC_4,  // D15
-  PC_5,  // D16
-  PC_6,  // D17
-  PC_7,  // D18
-  PC_8,  // D19
-  PC_9,  // D20
-  PC_10, // D21 - UART4_TX
-  PC_11, // D22 - UART4_RX
-  PC_12, // D23 - UART5_TX
-  PC_13, // D24
-  PD_2,	 // D25 - UART5_RX
-  PA_0,  // D26
-  PA_1,  // D27
-  PA_2,  // D28
+  PA_4,  // D1
+  PA_5,  // D2
+  PA_6,  // D3
+  PA_7,  // D4
+  PB_0,  // D5
+  PB_1,  // D6
+  PB_2,  // D7
+  PB_5,  // D8
+  PB_6,  // D9 - USART1_TX
+  PB_7,  // D10 - USART1_RX
+  PB_8,  // D11 - I2C1_SCL
+  PB_9,  // D12 - I2C1_SDA
+  PB_10, // D13 - USART3_TX
+  PB_11, // D14 - USART3_RX
+  PB_12, // D15
+  PB_13, // D16 - SPI2_SCK
+  PB_14, // D17 - SPI2_MISO
+  PB_15, // D18 - SPI2_MOSI
+  PC_4,  // D19
+  PC_5,  // D20
+  PC_6,  // D21
+  PC_7,  // D22
+  PC_8,  // D23
+  PC_9,  // D24
+  PC_10, // D25 - UART4_TX
+  PC_11, // D26 - UART4_RX
+  PC_12, // D27 - UART5_TX
+  PC_13, // D28
+  PD_2,	 // D29 - UART5_RX
+  PA_0,  // D30
+  PA_1,  // D31
+  PA_2,  // D32
   PC_0,  // A0 - ADC1_IN10
   PC_1,  // A1 - ADC1_IN11
   PC_2,	 // A2 - ADC1_IN12
