@@ -38,44 +38,46 @@ extern const PinName digitalPin[];
 #define PA5		2
 #define PA6		3
 #define PA7		4
-#define PB0		5
-#define PB1		6
-#define PB2		7
-#define PB5		8
-#define PB6		9
-#define PB7		10
-#define PB8		11
-#define PB9		12
-#define PB10	13
-#define PB11	14
-#define PB12	15
-#define PB13	16
-#define PB14	17
-#define PB15	18
-#define PC4		19
-#define PC5		20
-#define PC6		21
-#define PC7		22
-#define PC8		23
-#define PC9		24
-#define PC10	25
-#define PC11	26
-#define PC12	27
-#define PC13	28
-#define PD2		29
-#define PA0		30
-#define PA1		31
-#define PA2		32
-#define PC0		33 // A0
-#define PC1		34 // A1
-#define PC2		35 // A2
-#define PC3		36 // A3
+#define PA8		5
+#define PA9		6
+#define PB0		7
+#define PB1		8
+#define PB2		9
+#define PB5		10
+#define PB6		11
+#define PB7		12
+#define PB8		13
+#define PB9		14
+#define PB10	15
+#define PB11	16
+#define PB12	17
+#define PB13	18
+#define PB14	19
+#define PB15	20
+#define PC4		21
+#define PC5		22
+#define PC6		23
+#define PC7		24
+#define PC8		25
+#define PC9		26
+#define PC10	27
+#define PC11	28
+#define PC12	29
+#define PC13	30
+#define PD2		31
+#define PA0		32
+#define PA1		33
+#define PA2		34
+#define PC0		35 // A0
+#define PC1		35 // A1
+#define PC2		37 // A2
+#define PC3		38 // A3
 
 // This must be a literal
-#define NUM_DIGITAL_PINS        36
+#define NUM_DIGITAL_PINS        35
 // This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
 #define NUM_ANALOG_INPUTS       4
-#define NUM_ANALOG_FIRST        32
+#define NUM_ANALOG_FIRST        35
 
 // On-board LED pin number
 #define LED_ORANGE              PA0
