@@ -100,27 +100,30 @@ extern const PinName digitalPin[];
 #define TIMER_SERVO             TIM2  //TODO: advanced-control timers don't work
 
 // UART Definitions
-#define SERIAL_UART_INSTANCE    1 //Connected to ST-Link
+#define SERIAL_UART_INSTANCE    3 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
 
-#define PIN_SERIAL_RX           (PB7)
-#define PIN_SERIAL_TX           (PB6)
+#define PIN_SERIAL3_RX			(PB11)
+#define PIN_SERIAL3_TX			(PB10)
 
+#define PIN_SERIAL4_RX			(PC11)
+#define PIN_SERIAL4_TX			(PC10)
+
+#define PIN_SERIAL_RX           (PIN_SERIAL3_RX)
+#define PIN_SERIAL_TX           (PIN_SERIAL3_TX)
 
 #define PIN_SPI_MISO			(PA6)
 #define PIN_SPI_MOSI			(PA7)
 #define PIN_SPI_SCK				(PA5)
-
-#define UART1_DBG_TX			(PB6)
-#define UART1_DBG_RX			(PB7)
+#define SPI_CS_PIN				(PA4)
 
 #define PIN_WIRE_SDA			(PB9)
 #define PIN_WIRE_SCL			(PB8)
 
 #define ENABLE_HWSERIAL3
 #define ENABLE_HWSERIAL4
-#define ENABLE_HWSERIAL5
+//#define ENABLE_HWSERIAL5
 
 #ifdef __cplusplus
 } // extern "C"
@@ -145,8 +148,8 @@ extern const PinName digitalPin[];
 //
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_MONITOR     Serial
-#define SERIAL_PORT_HARDWARE    Serial
+//#define SERIAL_PORT_MONITOR     Serial
+//#define SERIAL_PORT_HARDWARE    Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
