@@ -116,7 +116,7 @@ extern const PinName digitalPin[];
 #define PIN_SPI_MISO			(PA6)
 #define PIN_SPI_MOSI			(PA7)
 #define PIN_SPI_SCK				(PA5)
-#define SPI_CS_PIN				(PA4)
+#define PIN_SPI_CS				(PA4)
 
 #define PIN_WIRE_SDA			(PB9)
 #define PIN_WIRE_SCL			(PB8)
