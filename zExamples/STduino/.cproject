@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="Debug" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331" name="Debug" parent="fr.ac6.managedbuild.config.gnu.cross.exe.debug" postannouncebuildStep="Generating hex and Printing size information:" postbuildStep="arm-none-eabi-objcopy -O ihex &quot;${BuildArtifactFileBaseName}.elf&quot; &quot;${BuildArtifactFileBaseName}.hex&quot; &amp;&amp; arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;">
+					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331." name="/" resourcePath="">
+						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1204247121" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug">
+							<option id="fr.ac6.managedbuild.option.gnu.cross.prefix.1778970873" name="Prefix" superClass="fr.ac6.managedbuild.option.gnu.cross.prefix" useByScannerDiscovery="false" value="arm-none-eabi-" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.249590865" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu" useByScannerDiscovery="false" value="STM32L073RZTx" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.board.718294625" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board" useByScannerDiscovery="false" value="NUCLEO-L073RZ" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.instructionSet.1772358911" name="Instruction Set" superClass="fr.ac6.managedbuild.option.gnu.cross.instructionSet" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.instructionSet.thumbII" valueType="enumerated"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1483625950" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.fpu.no" valueType="enumerated"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.893034010" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.soft" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.531897358" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/SnapDrive}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1530028562" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+								</outputEntries>
+							</builder>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.290995002" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.651033664" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="fr.ac6.managedbuild.gnu.c.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.402101522" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.418546312" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/OpenAMP&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/cdc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/hid&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/CMSIS_DSP/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Keyboard/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Mouse/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SoftwareSerial/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SrcWrapper/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/DFU/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MTP/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F2xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F3xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32H7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32MP1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32WBxx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc/arm_core&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1988207882" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__weak=__attribute__((weak))"/>
+									<listOptionValue builtIn="false" value="__packed=__attribute__((__packed__))"/>
+									<listOptionValue builtIn="false" value="STM32L0xx"/>
+									<listOptionValue builtIn="false" value="STM32L073xx"/>
+									<listOptionValue builtIn="false" value="ARDUINO=101"/>
+								</option>
+								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other.1847734924" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-fmessage-length=0" valueType="string"/>
+								<option id="gnu.c.compiler.option.dialect.std.1120777793" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.322296371" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.676830143" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.75188897" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option defaultValue="gnu.cpp.optimization.level.none" id="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level.541754999" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="fr.ac6.managedbuild.gnu.cpp.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.796671589" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.690656664" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/OpenAMP&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/cdc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/hid&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/CMSIS_DSP/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Keyboard/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Mouse/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SoftwareSerial/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SrcWrapper/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/DFU/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MTP/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F2xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F3xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32H7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32MP1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32WBxx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc/arm_core&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.413672288" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__weak=__attribute__((weak))"/>
+									<listOptionValue builtIn="false" value="__packed=__attribute__((__packed__))"/>
+									<listOptionValue builtIn="false" value="STM32L0xx"/>
+									<listOptionValue builtIn="false" value="STM32L073xx"/>
+									<listOptionValue builtIn="false" value="ARDUINO=101"/>
+								</option>
+								<option id="fr.ac6.managedbuild.gnu.cpp.compiler.option.misc.other.189804243" name="Other flags" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.misc.other" useByScannerDiscovery="false" value="-fmessage-length=0" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1084709145" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.938445710" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.s.378942929" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.s"/>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1170764620" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.script.714858607" name="Linker Script (-T)" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.script" value="../STM32F030C8Tx_FLASH.ld" valueType="string"/>
+								<option id="gnu.c.link.option.libs.1689352895" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
+								<option id="gnu.c.link.option.paths.1142000280" name="Library search path (-L)" superClass="gnu.c.link.option.paths"/>
+								<option id="gnu.c.link.option.ldflags.1194894525" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-specs=nosys.specs -specs=nano.specs" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.597655995" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1917683583" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.script.1260833409" name="Linker Script (-T)" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.script" useByScannerDiscovery="false" value="../../../Arduino_Core_STM32/variants/NUCLEO_L073RZ/ldscript.ld" valueType="string"/>
+								<option id="gnu.cpp.link.option.libs.92714143" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.paths.682335145" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.flags.609111992" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-specs=nosys.specs -specs=nano.specs" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1606069674" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.536181560" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.1437075049" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.170658077" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Inc/arm_core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Arduino/libs/I2Cdev}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/IO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/SnapDrive}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Switch}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Cradle}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CradleArray}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FootswitchArray}&quot;"/>
+								</option>
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.asm.gendebug.2127542350" name="Generate debugging information (-g)" superClass="fr.ac6.managedbuild.tool.gnu.cross.asm.gendebug" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1114926001" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.214751864" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="system|system/Drivers/CMSIS/Device/ST/STM32L0xx|cores/arduino/stm32/usb|system/Drivers/CMSIS/Device/ST/STM32WBxx|system/Drivers/CMSIS/Device/ST/STM32MP1xx|system/Drivers/CMSIS/Device/ST/STM32L4xx|system/Drivers/CMSIS/Device/ST/STM32L1xx|system/Drivers/CMSIS/Device/ST/STM32H7xx|system/Drivers/CMSIS/Device/ST/STM32G4xx|system/Drivers/CMSIS/Device/ST/STM32G0xx|system/Drivers/CMSIS/Device/ST/STM32F7xx|system/Drivers/CMSIS/Device/ST/STM32F4xx|system/Drivers/CMSIS/Device/ST/STM32F3xx|system/Drivers/CMSIS/Device/ST/STM32F2xx|system/Drivers/CMSIS/Device/ST/STM32F1xx|system/Drivers/CMSIS/Device/ST/STM32F0xx|system/STM32F0xx|system/Drivers/STM32F0xx_HAL_Driver|system/Drivers/STM32F0xx_HAL_Driver/Src|system/Drivers/STM32WBxx_HAL_Driver|system/Drivers/STM32MP1xx_HAL_Driver|system/Drivers/STM32L4xx_HAL_Driver|system/Drivers/STM32L1xx_HAL_Driver|system/Drivers/STM32L0xx_HAL_Driver|system/Drivers/STM32H7xx_HAL_Driver|system/Drivers/STM32G4xx_HAL_Driver|system/Drivers/STM32G0xx_HAL_Driver|system/Drivers/STM32F7xx_HAL_Driver|system/Drivers/STM32F4xx_HAL_Driver|system/Drivers/STM32F3xx_HAL_Driver|system/Drivers/STM32F2xx_HAL_Driver|system/Drivers/STM32F1xx_HAL_Driver|system/extras|system/Middlewares|system/STM32WBxx|system/STM32MP1xx|system/STM32L4xx|system/STM32L1xx|system/STM32L0xx|system/STM32H7xx|system/STM32G4xx|system/STM32G0xx|system/STM32F7xx|system/STM32F4xx|system/STM32F3xx|system/STM32F2xx|system/STM32F1xx|libraries/Servo|libraries/Mouse|libraries/Keyboard|libraries/IWatchdog|libraries/CMSIS_DSP|libraries/CapacitiveSensor-0.5.1|cores/arduino/stm32/OpenAMP|system/STM32L0xx/system_stm32l0xx.c|system/Middlewares/ST/STM32_USB_Device_Library|system/Middlewares/ST/STM32_USB_Host_Library|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_rtc_wakeup_template.c|cores/arduino/stm32/HAL|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_rtc_alarm_template.c|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_tim_template.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Arduino"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Cradle"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CradleArray"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FootswitchArray"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="IO"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Inc"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="SnapDrive"/>
+						<entry excluding="stm32f0xx_hal_msp.c|system_stm32f0xx.c|main.c|stm32f0xx_it.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Switch"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.1041711446">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.1041711446" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.1041711446" name="Release" parent="fr.ac6.managedbuild.config.gnu.cross.exe.debug" postannouncebuildStep="Generating hex and Printing size information:" postbuildStep="arm-none-eabi-objcopy -O ihex &quot;${BuildArtifactFileBaseName}.elf&quot; &quot;${BuildArtifactFileBaseName}.hex&quot; &amp;&amp; arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;">
+					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.1041711446." name="/" resourcePath="">
+						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1024015002" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug">
+							<option id="fr.ac6.managedbuild.option.gnu.cross.prefix.1986135741" name="Prefix" superClass="fr.ac6.managedbuild.option.gnu.cross.prefix" useByScannerDiscovery="false" value="arm-none-eabi-" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.521296575" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu" useByScannerDiscovery="false" value="STM32L073RZTx" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.board.601574517" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board" useByScannerDiscovery="false" value="NUCLEO-L073RZ" valueType="string"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.instructionSet.986053666" name="Instruction Set" superClass="fr.ac6.managedbuild.option.gnu.cross.instructionSet" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.instructionSet.thumbII" valueType="enumerated"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.2012387570" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.fpu.no" valueType="enumerated"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.1572696663" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" useByScannerDiscovery="false" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.soft" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.213980936" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/SnapDrive}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.2106507893" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+								</outputEntries>
+							</builder>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.181684660" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.219966332" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="fr.ac6.managedbuild.gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.238850527" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.296118471" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/OpenAMP&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/cdc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/hid&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/CMSIS_DSP/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Keyboard/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Mouse/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SoftwareSerial/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SrcWrapper/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/DFU/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MTP/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F2xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F3xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32H7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32MP1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32WBxx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc/arm_core&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Arduino/libs/ArduinoThread&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Arduino/libs/I2Cdev&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/IO&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SnapDrive&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Switch&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Cradle&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CradleArray&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/FootswitchArray&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/FootswitchArray&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1976801366" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__weak=__attribute__((weak))"/>
+									<listOptionValue builtIn="false" value="__packed=__attribute__((__packed__))"/>
+									<listOptionValue builtIn="false" value="STM32L0xx"/>
+									<listOptionValue builtIn="false" value="STM32L073xx"/>
+									<listOptionValue builtIn="false" value="ARDUINO=101"/>
+								</option>
+								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other.1847734924.377583843" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-fmessage-length=0" valueType="string"/>
+								<option id="gnu.c.compiler.option.dialect.std.1700698319" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.1896008222" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.435681457" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.970820795" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option defaultValue="gnu.cpp.optimization.level.none" id="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level.1970612740" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="fr.ac6.managedbuild.gnu.cpp.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1225831308" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.767798803" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/OpenAMP&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/cdc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/cores/arduino/stm32/usb/hid&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/CMSIS_DSP/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Keyboard/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Mouse/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Servo/src/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SoftwareSerial/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SPI/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/SrcWrapper/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/libraries/Wire/src/utility&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F2xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32MP1xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32WBxx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F2xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F3xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32F7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32G4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32H7xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32MP1xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Drivers/STM32WBxx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/DFU/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/HID/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/MTP/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Class/Template/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Host_Library/Core/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F2xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F3xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32F7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32G4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32H7xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32L4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32MP1xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/system/STM32WBxx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Inc/arm_core&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Arduino/libs/ArduinoThread&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Arduino/libs/I2Cdev&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/IO&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SnapDrive&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Switch&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Cradle&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CradleArray&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/FootswitchArray&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/FootswitchArray&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1530754173" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__weak=__attribute__((weak))"/>
+									<listOptionValue builtIn="false" value="__packed=__attribute__((__packed__))"/>
+									<listOptionValue builtIn="false" value="STM32L0xx"/>
+									<listOptionValue builtIn="false" value="STM32L073xx"/>
+									<listOptionValue builtIn="false" value="ARDUINO=101"/>
+								</option>
+								<option id="fr.ac6.managedbuild.gnu.cpp.compiler.option.misc.other.899543374" name="Other flags" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.misc.other" useByScannerDiscovery="false" value="-fmessage-length=0" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.43289294" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.479041544" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.s.1061321488" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.s"/>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1150960057" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.script.1473084778" name="Linker Script (-T)" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.script" value="../STM32F030C8Tx_FLASH.ld" valueType="string"/>
+								<option id="gnu.c.link.option.libs.958659612" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
+								<option id="gnu.c.link.option.paths.1235691889" name="Library search path (-L)" superClass="gnu.c.link.option.paths"/>
+								<option id="gnu.c.link.option.ldflags.910015468" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-specs=nosys.specs -specs=nano.specs" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.2128081071" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.406139841" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.script.548038330" name="Linker Script (-T)" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.script" useByScannerDiscovery="false" value="../../../Arduino_Core_STM32/variants/NUCLEO_L073RZ/ldscript.ld" valueType="string"/>
+								<option id="gnu.cpp.link.option.libs.163353659" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.paths.1058519002" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.flags.560805095" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-specs=nosys.specs -specs=nano.specs" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1519692678" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.1794132606" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.1784041056" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.1459342010" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/avr&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/stm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/EEPROM/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/IWatchdog/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/SPI/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/cores/arduino/stm32/LL&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/libraries/Wire/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/STM32L0xx_HAL_Driver/Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L0xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/system/STM32L0xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/../Arduino_Core_STM32/variants/NUCLEO_L073RZ&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Inc/arm_core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Arduino/libs/I2Cdev}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/IO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/SnapDrive}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Switch}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Cradle}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CradleArray}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FootswitchArray}&quot;"/>
+								</option>
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.asm.gendebug.48454753" superClass="fr.ac6.managedbuild.tool.gnu.cross.asm.gendebug" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1065020804" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.1006732572" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="system|system/Drivers/CMSIS/Device/ST/STM32L0xx|cores/arduino/stm32/usb|system/Drivers/CMSIS/Device/ST/STM32WBxx|system/Drivers/CMSIS/Device/ST/STM32MP1xx|system/Drivers/CMSIS/Device/ST/STM32L4xx|system/Drivers/CMSIS/Device/ST/STM32L1xx|system/Drivers/CMSIS/Device/ST/STM32H7xx|system/Drivers/CMSIS/Device/ST/STM32G4xx|system/Drivers/CMSIS/Device/ST/STM32G0xx|system/Drivers/CMSIS/Device/ST/STM32F7xx|system/Drivers/CMSIS/Device/ST/STM32F4xx|system/Drivers/CMSIS/Device/ST/STM32F3xx|system/Drivers/CMSIS/Device/ST/STM32F2xx|system/Drivers/CMSIS/Device/ST/STM32F1xx|system/Drivers/CMSIS/Device/ST/STM32F0xx|system/STM32F0xx|system/Drivers/STM32F0xx_HAL_Driver|system/Drivers/STM32F0xx_HAL_Driver/Src|system/Drivers/STM32WBxx_HAL_Driver|system/Drivers/STM32MP1xx_HAL_Driver|system/Drivers/STM32L4xx_HAL_Driver|system/Drivers/STM32L1xx_HAL_Driver|system/Drivers/STM32L0xx_HAL_Driver|system/Drivers/STM32H7xx_HAL_Driver|system/Drivers/STM32G4xx_HAL_Driver|system/Drivers/STM32G0xx_HAL_Driver|system/Drivers/STM32F7xx_HAL_Driver|system/Drivers/STM32F4xx_HAL_Driver|system/Drivers/STM32F3xx_HAL_Driver|system/Drivers/STM32F2xx_HAL_Driver|system/Drivers/STM32F1xx_HAL_Driver|system/extras|system/Middlewares|system/STM32WBxx|system/STM32MP1xx|system/STM32L4xx|system/STM32L1xx|system/STM32L0xx|system/STM32H7xx|system/STM32G4xx|system/STM32G0xx|system/STM32F7xx|system/STM32F4xx|system/STM32F3xx|system/STM32F2xx|system/STM32F1xx|libraries/Servo|libraries/Mouse|libraries/Keyboard|libraries/IWatchdog|libraries/CMSIS_DSP|libraries/CapacitiveSensor-0.5.1|cores/arduino/stm32/OpenAMP|system/STM32L0xx/system_stm32l0xx.c|system/Middlewares/ST/STM32_USB_Device_Library|system/Middlewares/ST/STM32_USB_Host_Library|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_rtc_wakeup_template.c|cores/arduino/stm32/HAL|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_rtc_alarm_template.c|system/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_timebase_tim_template.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Arduino"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Cradle"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CradleArray"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FootswitchArray"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="IO"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Inc"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="SnapDrive"/>
+						<entry excluding="stm32f0xx_hal_msp.c|system_stm32f0xx.c|main.c|stm32f0xx_it.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Switch"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="SnapDrive.fr.ac6.managedbuild.target.gnu.cross.exe.967996280" name="Executable" projectType="fr.ac6.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="DMX_DISABLED"/>
+		<configuration configurationName="DMX_ENABLED"/>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/STduino"/>
+		</configuration>
+		<configuration configurationName="Release"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.290995002;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.322296371">
+			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.860564981;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.860564981.;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.164324390;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.501230141">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.75188897;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.938445710">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.release.123252104;fr.ac6.managedbuild.config.gnu.cross.exe.release.123252104.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.290995002;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.322296371">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.160623590;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.160623590.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1244833038;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.1843390465">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.160623590;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.160623590.;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.668705267;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.135176877">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.release.123252104;fr.ac6.managedbuild.config.gnu.cross.exe.release.123252104.;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.75188897;fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.input.cpp.938445710">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.860564981;fr.ac6.managedbuild.config.gnu.cross.exe.debug.474698331.860564981.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.415153009;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.204845716">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>
