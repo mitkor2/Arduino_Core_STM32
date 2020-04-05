@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "variant.h"
+#include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,8 +40,8 @@ const PinName digitalPin[] = {
   PB_13, //D13
   PB_9,  //D14
   PB_8,  //D15
-// ST Morpho
-// CN7 Left Side
+  // ST Morpho
+  // CN7 Left Side
   PC_10, //D16
   PC_12, //D17
   PF_11, //D18 - BOOT0
@@ -56,12 +56,12 @@ const PinName digitalPin[] = {
   PF_1,  //D27
   PC_2,  //D28
   PC_3,  //D29
-// CN7 Right Side
+  // CN7 Right Side
   PC_11, //D30
   PD_2,  //D31
-// CN10 Left Side
+  // CN10 Left Side
   PC_9,  //D32
-// CN10 Right side
+  // CN10 Right side
   PC_8,  //D33
   PC_6,  //D34
   PC_5,  //D35
@@ -80,14 +80,23 @@ const PinName digitalPin[] = {
   PA_4,  //D48/A2
   PB_0,  //D49/A3
   PC_1,  //D50/A4
-  PC_0,  //D51/A5
-  // Duplicated pins in order to be aligned with PinMap_ADC
-  PC_2,  //D52/A6  = D28
-  PC_3,  //D53/A7  = D29
-  PB_11, //D54/A8  = D39
-  PB_1,  //D55/A9  = D41
-  PA_7,  //D56/A10 = D42
-  PA_6,  //D57/A11 = D43
+  PC_0   //D51/A5
+};
+
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  46, //A0
+  47, //A1
+  48, //A2
+  49, //A3
+  50, //A4
+  51, //A5
+  28, //A6
+  29, //A7
+  39, //A8
+  41, //A9
+  42, //A10
+  43  //A11
 };
 
 #ifdef __cplusplus
@@ -126,32 +135,23 @@ WEAK void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
 
   /**Initializes the CPU, AHB and APB busses clocks */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
-  {
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
-
-  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
-
-  HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
-
-  /* SysTick_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
 #ifdef __cplusplus

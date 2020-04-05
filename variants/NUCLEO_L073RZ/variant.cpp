@@ -28,7 +28,7 @@
  *******************************************************************************
  */
 
-#include "variant.h"
+#include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -52,8 +52,8 @@ const PinName digitalPin[] = {
   PA_5,  //D13
   PB_9,  //D14
   PB_8,  //D15
-// ST Morpho
-// CN7 Left Side
+  // ST Morpho
+  // CN7 Left Side
   PC_10, //D16
   PC_12, //D17
   NC,   //D18 - BOOT0
@@ -68,12 +68,12 @@ const PinName digitalPin[] = {
   PH_1,  //D27
   PC_2,  //D28
   PC_3,  //D29
-// CN7 Right Side
+  // CN7 Right Side
   PC_11, //D30
   PD_2,  //D31
-// CN10 Left Side
+  // CN10 Left Side
   PC_9,  //D32
-// CN10 Right side
+  // CN10 Right side
   PC_8,  //D33
   PC_6,  //D34
   PC_5,  //D35
@@ -92,14 +92,23 @@ const PinName digitalPin[] = {
   PA_4,  //D48/A2
   PB_0,  //D49/A3
   PC_1,  //D50/A4 - SB56 ON SB51 ON on the board
-  PC_0,  //D51/A5
-  // Duplicated pins in order to be aligned with PinMap_ADC
-  PA_7,  //D52/A6  = D11
-  PA_6,  //D53/A7  = D12
-  PC_2,  //D54/A8  = D28
-  PC_3,  //D55/A9  = D29
-  PC_5,  //D56/A10 = D35
-  PC_4   //D57/A11 = D45
+  PC_0   //D51/A5
+};
+
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  46, //A0
+  47, //A1
+  48, //A2
+  49, //A3
+  50, //A4
+  51, //A5
+  11, //A6
+  12, //A7
+  28, //A8
+  29, //A9
+  35, //A10
+  45  //A11
 };
 
 #ifdef __cplusplus
@@ -122,14 +131,16 @@ WEAK void SystemClock_Config(void)
 
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+  RCC_PeriphCLKInitTypeDef PeriphClkInit;
 
   /* Configure the main internal regulator output voltage */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
   /* Initializes the CPU, AHB and APB busses clocks */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_HSI48;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = 16;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
@@ -139,8 +150,8 @@ WEAK void SystemClock_Config(void)
   }
 
   /* Initializes the CPU, AHB and APB busses clocks */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -150,14 +161,11 @@ WEAK void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-  /* Configure the Systick interrupt time */
-  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
-
-  /* Configure the Systick */
-  HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
-
-  /* SysTick_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
+  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_HSI48;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 }
 
 #ifdef __cplusplus

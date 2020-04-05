@@ -19,19 +19,13 @@
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
-/*----------------------------------------------------------------------------
- *        Headers
- *----------------------------------------------------------------------------*/
-#include "PeripheralPins.h"
-
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
-extern const PinName digitalPin[];
 
 #define PA10 0
 #define PA9  1
@@ -40,8 +34,8 @@ extern const PinName digitalPin[];
 #define PB7  4
 #define PB6  5
 #define PB1  6
-#define PC15 7  // By default, SB8 open PF1/PC15 not connected to D7
-#define PC14 8  // By default, SB6 open PF0/PC14 not connected to D8
+#define PC14 7  // By default, SB6 open PF0/PC14 not connected to D7
+#define PC15 8  // By default, SB8 open PF1/PC15 not connected to D8
 #define PA8  9
 #define PA11 10
 #define PB5  11
@@ -75,11 +69,9 @@ extern const PinName digitalPin[];
 #define PIN_WIRE_SCL            5
 
 // Timer Definitions
-//Do not use timer used by PWM pins when possible. See PinMap_PWM.
+// Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
 #define TIMER_TONE              TIM6
-
-// Do not use basic timer: OC is required
-#define TIMER_SERVO             TIM2  //TODO: advanced-control timers don't work
+#define TIMER_SERVO             TIM7
 
 // UART Definitions
 #define SERIAL_UART_INSTANCE    2 //Connected to ST-Link
@@ -87,6 +79,9 @@ extern const PinName digitalPin[];
 // Mandatory for Firmata
 #define PIN_SERIAL_RX           PA15
 #define PIN_SERIAL_TX           PA2
+
+/* Extra HAL modules */
+#define HAL_DAC_MODULE_ENABLED
 
 #ifdef __cplusplus
 } // extern "C"
@@ -96,23 +91,23 @@ extern const PinName digitalPin[];
  *----------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-// These serial port names are intended to allow libraries and architecture-neutral
-// sketches to automatically default to the correct port name for a particular type
-// of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
-// the first hardware serial port whose RX/TX pins are not dedicated to another use.
-//
-// SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
-//
-// SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
-//
-// SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
-//
-// SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
-//
-// SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
-//                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_MONITOR     Serial
-#define SERIAL_PORT_HARDWARE    Serial
+  // These serial port names are intended to allow libraries and architecture-neutral
+  // sketches to automatically default to the correct port name for a particular type
+  // of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
+  // the first hardware serial port whose RX/TX pins are not dedicated to another use.
+  //
+  // SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
+  //
+  // SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
+  //
+  // SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
+  //
+  // SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
+  //
+  // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
+  //                            pins are NOT connected to anything by default.
+  #define SERIAL_PORT_MONITOR     Serial
+  #define SERIAL_PORT_HARDWARE    Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */

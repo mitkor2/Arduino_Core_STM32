@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "variant.h"
+#include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +24,7 @@ extern "C" {
 
 // Pin number following UM0919 table 4,5 and 6
 const PinName digitalPin[] = {
-// P1 connector
+  // P1 connector
   PC_13, //D0
   PC_0,  //D1
   PC_1,  //D2
@@ -43,7 +43,7 @@ const PinName digitalPin[] = {
   PB_0,  //D15
   PB_1,  //D16
   PB_2,  //D17
-// P2 connector
+  // P2 connector
   PC_6,  //D18
   PC_7,  //D19
   PC_8,  //D20 - LED blue
@@ -67,30 +67,33 @@ const PinName digitalPin[] = {
   PB_7,  //D38
   PB_8,  //D39
   PB_9,  //D40
-// P3 connector
+  // P3 connector
   PB_10, //D41
   PB_11, //D42
   PB_12, //D43 - SPI SS
   PB_13, //D44 - SPI SCLK
   PB_14, //D45 - SPI MISO
-  PB_15, //D46 - SPI MOSI
-  // Duplicated pins in order to be aligned with PinMap_ADC
-  PC_0,  //D47/A0 = D0
-  PC_1,  //D48/A1 = D1
-  PC_2,  //D49/A2 = D2
-  PC_3,  //D50/A3 = D3
-  PA_0,  //D51/A4 = D4
-  PA_1,  //D52/A5 = D5
-  PA_2,  //D53/A6 = D6
-  PA_3,  //D54/A7 = D7
-  PA_4,  //D55/A8 = D8
-  PA_5,  //D56/A9 = D9
-  PA_6,  //D57/A10 = D10
-  PA_7,  //D58/A11 = D11
-  PC_4,  //D59/A12 = D12
-  PC_5,  //D60/A13 = D13
-  PB_0,  //D61/A14 = D14
-  PB_1   //D62/A15 = D15
+  PB_15  //D46 - SPI MOSI
+};
+
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  1,  //A0
+  2,  //A1
+  3,  //A2
+  4,  //A3
+  5,  //A4
+  6,  //A5
+  7,  //A6
+  8,  //A7
+  9,  //A8
+  10, //A9
+  11, //A10
+  12, //A11
+  13, //A12
+  14, //A13
+  15, //A14
+  16  //A15
 };
 
 #ifdef __cplusplus
@@ -131,35 +134,25 @@ WEAK void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    while(1);
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+    while (1);
   }
 
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    while(1);
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK) {
+    while (1);
   }
 
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
-    while(1);
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
+    while (1);
   }
-
-  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
-
-  HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
-
-  /* SysTick_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
 #ifdef __cplusplus

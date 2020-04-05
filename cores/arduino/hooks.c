@@ -16,6 +16,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include <stdint.h>
+
 /**
  * Empty yield() hook.
  *
@@ -25,34 +27,26 @@
  * Its defined as a weak symbol and it can be redefined to implement a
  * real cooperative scheduler.
  */
-static void __empty() {
-	// Empty
+static void __empty()
+{
+  // Empty
 }
-void yield(void) __attribute__ ((weak, alias("__empty")));
+void yield(void) __attribute__((weak, alias("__empty")));
 
+#ifdef DTR_TOGGLING_SEQ
 /**
- * SysTick hook
+ * Empty dtr_toggling() hook.
  *
- * This function is called from SysTick handler, before the default
- * handler provided by Arduino.
- */
-static int __false() {
-	// Return false
-	return 0;
-}
-int sysTickHook(void) __attribute__ ((weak, alias("__false")));
-
-/**
- * SVC hook
- * PendSV hook
+ * This function is intended to be used by library writers to build
+ * libraries or sketches that require DTR toggling feature.
  *
- * These functions are called from SVC handler, and PensSV handler.
- * Default action is halting.
+ * Its defined as a weak symbol and it can be redefined to implement
+ * task to achieve in this case.
  */
-static void __halt() {
-	// Halts
-	while (1)
-		;
+static void __empty_dtr_toggling(uint8_t *buf, uint32_t *len)
+{
+  (void)buf;
+  (void)len;
 }
-void svcHook(void)    __attribute__ ((weak, alias("__halt")));
-void pendSVHook(void) __attribute__ ((weak, alias("__halt")));
+void dtr_togglingHook(uint8_t *buf, uint32_t *len) __attribute__((weak, alias("__empty_dtr_toggling")));
+#endif

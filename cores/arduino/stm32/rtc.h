@@ -40,12 +40,15 @@
 #define __RTC_H
 
 /* Includes ------------------------------------------------------------------*/
+#include <stdbool.h>
+#include "stm32_def.h"
+#include "backup.h"
 #include "clock.h"
 
-#ifdef HAL_RTC_MODULE_ENABLED
+#if defined(HAL_RTC_MODULE_ENABLED) && !defined(HAL_RTC_MODULE_ONLY)
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Exported types ------------------------------------------------------------*/
@@ -75,6 +78,14 @@ typedef enum {
 typedef void(*voidCallbackPtr)(void *);
 
 /* Exported constants --------------------------------------------------------*/
+/* Interrupt priority */
+#ifndef RTC_IRQ_PRIO
+#define RTC_IRQ_PRIO       2
+#endif
+#ifndef RTC_IRQ_SUBPRIO
+#define RTC_IRQ_SUBPRIO    0
+#endif
+
 
 #define HSE_RTC_MAX 1000000U
 
@@ -100,6 +111,10 @@ typedef void(*voidCallbackPtr)(void *);
 #if defined(STM32F0xx) || defined(STM32L0xx)
 #define RTC_Alarm_IRQn RTC_IRQn
 #define RTC_Alarm_IRQHandler RTC_IRQHandler
+#endif
+#if defined(STM32G0xx)
+#define RTC_Alarm_IRQn RTC_TAMP_IRQn
+#define RTC_Alarm_IRQHandler RTC_TAMP_IRQHandler
 #endif
 
 #if defined(STM32F1xx) && !defined(IS_RTC_WEEKDAY)
@@ -135,8 +150,9 @@ void RTC_SetClockSource(sourceClock_t source);
 void RTC_getPrediv(int8_t *asynch, int16_t *synch);
 void RTC_setPrediv(int8_t asynch, int16_t synch);
 
-void RTC_init(hourFormat_t format, sourceClock_t source);
+void RTC_init(hourFormat_t format, sourceClock_t source, bool reset);
 void RTC_DeInit(void);
+bool RTC_IsTimeSet(void);
 
 void RTC_SetTime(uint8_t hours, uint8_t minutes, uint8_t seconds, uint32_t subSeconds, hourAM_PM_t period);
 void RTC_GetTime(uint8_t *hours, uint8_t *minutes, uint8_t *seconds, uint32_t *subSeconds, hourAM_PM_t *period);
@@ -151,10 +167,10 @@ void attachAlarmCallback(voidCallbackPtr func, void *data);
 void detachAlarmCallback(void);
 
 #ifdef __cplusplus
- }
+}
 #endif
 
-#endif /* HAL_RTC_MODULE_ENABLED */
+#endif /* HAL_RTC_MODULE_ENABLED  && !HAL_RTC_MODULE_ONLY */
 
 #endif /* __RTC_H */
 

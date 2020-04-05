@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "variant.h"
+#include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,8 +31,8 @@ const PinName digitalPin[] = {
   PB_7,  //D4
   PB_6,  //D5
   PB_1,  //D6
-  PC_15,  //D7 - By default, SB8 open PF1/PC15 not connected to D7
-  PC_14,  //D8 - By default, SB6 open PF0/PC14 not connected to D8
+  PC_14, //D7 - By default, SB6 open PF0/PC14 not connected to D7
+  PC_15, //D8 - By default, SB8 open PF1/PC15 not connected to D8
   PA_8,  //D9
   PA_11, //D10
   PB_5,  //D11
@@ -97,10 +97,9 @@ WEAK void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLP = 7;
   RCC_OscInitStruct.PLL.PLLQ = 4;
 
-  if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
 
   /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2
@@ -110,10 +109,9 @@ WEAK void SystemClock_Config(void)
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-  if(HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
 }
 

@@ -67,7 +67,7 @@
 
   The table below gives the allowed values of the pre-emption priority and subpriority according
   to the Priority Grouping configuration performed by HAL_NVIC_SetPriorityGrouping() function.
-  
+
     ==========================================================================================================================
       NVIC_PriorityGroup   | NVIC_IRQChannelPreemptionPriority | NVIC_IRQChannelSubPriority  |       Description
     ==========================================================================================================================
@@ -76,21 +76,21 @@
     --------------------------------------------------------------------------------------------------------------------------
      NVIC_PRIORITYGROUP_1  |                0-1                |            0-7              | 1 bit for pre-emption priority
                            |                                   |                             | 3 bits for subpriority
-    --------------------------------------------------------------------------------------------------------------------------    
+    --------------------------------------------------------------------------------------------------------------------------
      NVIC_PRIORITYGROUP_2  |                0-3                |            0-3              | 2 bits for pre-emption priority
                            |                                   |                             | 2 bits for subpriority
-    --------------------------------------------------------------------------------------------------------------------------    
+    --------------------------------------------------------------------------------------------------------------------------
      NVIC_PRIORITYGROUP_3  |                0-7                |            0-1              | 3 bits for pre-emption priority
                            |                                   |                             | 1 bit for subpriority
-    --------------------------------------------------------------------------------------------------------------------------    
+    --------------------------------------------------------------------------------------------------------------------------
      NVIC_PRIORITYGROUP_4  |                0-15               |            0                | 4 bits for pre-emption priority
-                           |                                   |                             | 0 bit for subpriority                       
+                           |                                   |                             | 0 bit for subpriority
     ==========================================================================================================================
 
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -161,7 +161,7 @@
 /**
   * @brief  Set the priority grouping field (pre-emption priority and subpriority)
   *         using the required unlock sequence.
-  * @param  PriorityGroup: The priority grouping bits length.
+  * @param  PriorityGroup The priority grouping bits length.
   *         This parameter can be one of the following values:
   *         @arg NVIC_PRIORITYGROUP_0: 0 bit  for pre-emption priority,
   *                                    4 bits for subpriority
@@ -188,13 +188,13 @@ void HAL_NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
 
 /**
   * @brief  Set the priority of an interrupt.
-  * @param  IRQn: External interrupt number.
+  * @param  IRQn External interrupt number.
   *         This parameter can be an enumerator of IRQn_Type enumeration
   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32l4xxxx.h))
-  * @param  PreemptPriority: The pre-emption priority for the IRQn channel.
+  * @param  PreemptPriority The pre-emption priority for the IRQn channel.
   *         This parameter can be a value between 0 and 15
   *         A lower priority value indicates a higher priority
-  * @param  SubPriority: the subpriority level for the IRQ channel.
+  * @param  SubPriority the subpriority level for the IRQ channel.
   *         This parameter can be a value between 0 and 15
   *         A lower priority value indicates a higher priority.
   * @retval None
@@ -225,7 +225,7 @@ void HAL_NVIC_EnableIRQ(IRQn_Type IRQn)
 {
   /* Check the parameters */
   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
-  
+
   /* Enable interrupt */
   NVIC_EnableIRQ(IRQn);
 }
@@ -241,7 +241,7 @@ void HAL_NVIC_DisableIRQ(IRQn_Type IRQn)
 {
   /* Check the parameters */
   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
-  
+
   /* Disable interrupt */
   NVIC_DisableIRQ(IRQn);
 }
@@ -257,9 +257,9 @@ void HAL_NVIC_SystemReset(void)
 }
 
 /**
-  * @brief  Initialize the System Timer with interrupt enabled and start the System Tick Timer (SysTick): 
+  * @brief  Initialize the System Timer with interrupt enabled and start the System Tick Timer (SysTick):
   *         Counter is in free running mode to generate periodic interrupts.
-  * @param  TicksNumb: Specifies the ticks Number of ticks between two interrupts.
+  * @param  TicksNumb Specifies the ticks Number of ticks between two interrupts.
   * @retval status:  - 0  Function succeeded.
   *                  - 1  Function failed.
   */
@@ -299,7 +299,7 @@ uint32_t HAL_NVIC_GetPriorityGrouping(void)
 
 /**
   * @brief  Get the priority of an interrupt.
-  * @param  IRQn: External interrupt number.
+  * @param  IRQn External interrupt number.
   *         This parameter can be an enumerator of IRQn_Type enumeration
   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32l4xxxx.h))
   * @param   PriorityGroup: the priority grouping bits length.
@@ -314,8 +314,8 @@ uint32_t HAL_NVIC_GetPriorityGrouping(void)
   *                                      1 bit for subpriority
   *           @arg NVIC_PRIORITYGROUP_4: 4 bits for pre-emption priority,
   *                                      0 bit for subpriority
-  * @param  pPreemptPriority: Pointer on the Preemptive priority value (starting from 0).
-  * @param  pSubPriority: Pointer on the Subpriority value (starting from 0).
+  * @param  pPreemptPriority Pointer on the Preemptive priority value (starting from 0).
+  * @param  pSubPriority Pointer on the Subpriority value (starting from 0).
   * @retval None
   */
 void HAL_NVIC_GetPriority(IRQn_Type IRQn, uint32_t PriorityGroup, uint32_t *pPreemptPriority, uint32_t *pSubPriority)
@@ -392,7 +392,7 @@ uint32_t HAL_NVIC_GetActive(IRQn_Type IRQn)
 
 /**
   * @brief  Configure the SysTick clock source.
-  * @param  CLKSource: specifies the SysTick clock source.
+  * @param  CLKSource specifies the SysTick clock source.
   *          This parameter can be one of the following values:
   *             @arg SYSTICK_CLKSOURCE_HCLK_DIV8: AHB clock divided by 8 selected as SysTick clock source.
   *             @arg SYSTICK_CLKSOURCE_HCLK: AHB clock selected as SysTick clock source.
@@ -434,25 +434,9 @@ __weak void HAL_SYSTICK_Callback(void)
 
 #if (__MPU_PRESENT == 1)
 /**
-  * @brief  Disable the MPU.
-  * @retval None
-  */
-void HAL_MPU_Disable(void)
-{
-  /* Make sure outstanding transfers are done */
-  __DMB();
-
-  /* Disable fault exceptions */
-  SCB->SHCSR &= ~SCB_SHCSR_MEMFAULTENA_Msk;
-  
-  /* Disable the MPU and clear the control register*/
-  MPU->CTRL = 0U;
-}
-
-/**
   * @brief  Enable the MPU.
-  * @param  MPU_Control: Specifies the control mode of the MPU during hard fault, 
-  *          NMI, FAULTMASK and privileged accessto the default memory 
+  * @param  MPU_Control Specifies the control mode of the MPU during hard fault,
+  *          NMI, FAULTMASK and privileged accessto the default memory
   *          This parameter can be one of the following values:
   *            @arg MPU_HFNMI_PRIVDEF_NONE
   *            @arg MPU_HARDFAULT_NMI
@@ -463,19 +447,31 @@ void HAL_MPU_Disable(void)
 void HAL_MPU_Enable(uint32_t MPU_Control)
 {
   /* Enable the MPU */
-  MPU->CTRL = MPU_Control | MPU_CTRL_ENABLE_Msk;
-  
-  /* Enable fault exceptions */
-  SCB->SHCSR |= SCB_SHCSR_MEMFAULTENA_Msk;
-  
-  /* Ensure MPU settings take effects */
+  MPU->CTRL = (MPU_Control | MPU_CTRL_ENABLE_Msk);
+
+  /* Ensure MPU setting take effects */
   __DSB();
   __ISB();
 }
 
+
+/**
+  * @brief  Disable the MPU.
+  * @retval None
+  */
+void HAL_MPU_Disable(void)
+{
+  /* Make sure outstanding transfers are done */
+  __DMB();
+
+  /* Disable the MPU and clear the control register*/
+  MPU->CTRL  = 0;
+}
+
+
 /**
   * @brief  Initialize and configure the Region and the memory to be protected.
-  * @param  MPU_Init: Pointer to a MPU_Region_InitTypeDef structure that contains
+  * @param  MPU_Init Pointer to a MPU_Region_InitTypeDef structure that contains
   *                the initialization and configuration information.
   * @retval None
   */

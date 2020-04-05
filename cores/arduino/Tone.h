@@ -8,7 +8,7 @@
 
   This library is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU Lesser General Public License for more details.
 
   You should have received a copy of the GNU Lesser General Public
@@ -20,21 +20,21 @@
 #define _WIRING_TONE_
 
 #ifdef __cplusplus
-/*
- * \brief Generate a tone to a pin.
- *
- * \param _pin
- * \param frequency Tone frequency (in hertz)
- * \param duration  Tone duration (in milliseconds)
- */
-extern void tone(uint8_t _pin, unsigned int frequency, unsigned long duration = 0);
+  /*
+  * \brief Generate a tone to a pin.
+  *
+  * \param _pin
+  * \param frequency Tone frequency (in hertz)
+  * \param duration  Tone duration (in milliseconds)
+  */
+  extern void tone(uint8_t _pin, unsigned int frequency, unsigned long duration = 0);
 
-/*
- * \brief Stop tone generation on pin.
- *
- * \param _pin
- */
-extern void noTone(uint8_t _pin);
+  /*
+  * \brief Stop tone generation on pin.
+  *
+  * \param _pin
+  */
+  extern void noTone(uint8_t _pin, bool destruct = false);
 
 #endif
 

@@ -19,19 +19,13 @@
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
-/*----------------------------------------------------------------------------
- *        Headers
- *----------------------------------------------------------------------------*/
-#include "PeripheralPins.h"
-
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
-extern const PinName digitalPin[];
 
 #define PG9  0
 #define PG14 1
@@ -44,9 +38,9 @@ extern const PinName digitalPin[];
 #define PF12 8
 #define PD15 9
 #define PD14 10
-#define PA7  11 // A10
-#define PA6  12 // A11
-#define PA5  13 // A12
+#define PA7  A10
+#define PA6  A11
+#define PA5  A12
 #define PB9  14
 #define PB8  15
 #define PC6  16
@@ -57,7 +51,7 @@ extern const PinName digitalPin[];
 #define PC7  21
 #define PB5  22
 #define PB3  23
-#define PA4  24 // A13
+#define PA4  A13
 #define PB4  25
 #define PB6  26
 #define PB2  27
@@ -65,7 +59,7 @@ extern const PinName digitalPin[];
 #define PD12 29
 #define PD11 30
 #define PE2  31
-#define PA0  32 // A14
+#define PA0  A14
 #define PB0  33 // LED_GREEN
 #define PE0  34
 #define PB11 35
@@ -94,9 +88,9 @@ extern const PinName digitalPin[];
 #define PE5  58
 #define PE6  59
 #define PE3  60
-#define PF8  61 // A15
-#define PF7  62 // A16
-#define PF9  63 // A17
+#define PF8  A15
+#define PF7  A16
+#define PF9  A17
 #define PG1  64
 #define PG0  65
 #define PD1  66
@@ -111,22 +105,21 @@ extern const PinName digitalPin[];
 #define PC13 75 // USER_BTN
 #define PD9  76 // Serial Rx
 #define PD8  77 // Serial Tx
-#define PA3  78 // A0
-#define PC0  79 // A1
-#define PC3  80 // A2
-#define PF3  81 // A3
-#define PF5  82 // A4
-#define PF10 83 // A5
-#define PB1  84 // A6
-#define PC2  85 // A7
-#define PF4  86 // A8
-#define PF6  87 // A9
+#define PA3  A0
+#define PC0  A1
+#define PC3  A2
+#define PF3  A3
+#define PF5  A4
+#define PF10 A5
+#define PB1  A6
+#define PC2  A7
+#define PF4  A8
+#define PF6  A9
 
 // This must be a literal
-#define NUM_DIGITAL_PINS        96
+#define NUM_DIGITAL_PINS        88
 // This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
 #define NUM_ANALOG_INPUTS       18
-#define NUM_ANALOG_FIRST        78
 
 // On-board LED pin number
 #define LED_BUILTIN             PB0
@@ -138,11 +131,9 @@ extern const PinName digitalPin[];
 #define USER_BTN                PC13
 
 // Timer Definitions
-// Do not use timer used by PWM pins when possible. See PinMap_PWM.
+// Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
 #define TIMER_TONE              TIM6
-
-// Do not use basic timer: OC is required
-#define TIMER_SERVO             TIM2  //TODO: advanced-control timers don't work
+#define TIMER_SERVO             TIM7
 
 // UART Definitions
 #define SERIAL_UART_INSTANCE    3 //Connected to ST-Link
@@ -152,6 +143,10 @@ extern const PinName digitalPin[];
 #define PIN_SERIAL_RX           PD9
 #define PIN_SERIAL_TX           PD8
 
+/* Extra HAL modules */
+#define HAL_DAC_MODULE_ENABLED
+#define HAL_ETH_MODULE_ENABLED
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
@@ -160,23 +155,23 @@ extern const PinName digitalPin[];
  *----------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-// These serial port names are intended to allow libraries and architecture-neutral
-// sketches to automatically default to the correct port name for a particular type
-// of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
-// the first hardware serial port whose RX/TX pins are not dedicated to another use.
-//
-// SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
-//
-// SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
-//
-// SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
-//
-// SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
-//
-// SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
-//                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_MONITOR     Serial
-#define SERIAL_PORT_HARDWARE    Serial
+  // These serial port names are intended to allow libraries and architecture-neutral
+  // sketches to automatically default to the correct port name for a particular type
+  // of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
+  // the first hardware serial port whose RX/TX pins are not dedicated to another use.
+  //
+  // SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
+  //
+  // SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
+  //
+  // SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
+  //
+  // SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
+  //
+  // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
+  //                            pins are NOT connected to anything by default.
+  #define SERIAL_PORT_MONITOR     Serial
+  #define SERIAL_PORT_HARDWARE    Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */

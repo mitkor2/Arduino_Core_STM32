@@ -27,6 +27,7 @@
 #include <inttypes.h>
 
 #include "Stream.h"
+#include "uart.h"
 
 // Define constants and variables for buffering incoming serial data.  We're
 // using a ring buffer (I think), in which head is the index of the location
@@ -40,21 +41,30 @@
 // often work, but occasionally a race condition can occur that makes
 // Serial behave erratically. See https://github.com/arduino/Arduino/issues/2405
 #if !defined(SERIAL_TX_BUFFER_SIZE)
-#define SERIAL_TX_BUFFER_SIZE 64
+  #define SERIAL_TX_BUFFER_SIZE 64
 #endif
 #if !defined(SERIAL_RX_BUFFER_SIZE)
-#define SERIAL_RX_BUFFER_SIZE 64
+  #define SERIAL_RX_BUFFER_SIZE 64
 #endif
 #if (SERIAL_TX_BUFFER_SIZE>256)
-typedef uint16_t tx_buffer_index_t;
+  typedef uint16_t tx_buffer_index_t;
 #else
-typedef uint8_t tx_buffer_index_t;
+  typedef uint8_t tx_buffer_index_t;
 #endif
 #if  (SERIAL_RX_BUFFER_SIZE>256)
-typedef uint16_t rx_buffer_index_t;
+  typedef uint16_t rx_buffer_index_t;
 #else
-typedef uint8_t rx_buffer_index_t;
+  typedef uint8_t rx_buffer_index_t;
 #endif
+
+// A bool should be enough for this
+// But it brings an build error due to ambiguous
+// call of overloaded HardwareSerial(int, int)
+// So defining a dedicated type
+typedef enum {
+  HALF_DUPLEX_DISABLED,
+  HALF_DUPLEX_ENABLED
+} HalfDuplexMode_t;
 
 // Define config for Serial.begin(baud, config);
 // below configs are not supported by STM32
@@ -68,12 +78,12 @@ typedef uint8_t rx_buffer_index_t;
 //#define SERIAL_6N2 0x0A
 
 #ifdef UART_WORDLENGTH_7B
-#define SERIAL_7N1 0x04
-#define SERIAL_7N2 0x0C
-#define SERIAL_6E1 0x22
-#define SERIAL_6E2 0x2A
-#define SERIAL_6O1 0x32
-#define SERIAL_6O2 0x3A
+  #define SERIAL_7N1 0x04
+  #define SERIAL_7N2 0x0C
+  #define SERIAL_6E1 0x22
+  #define SERIAL_6E2 0x2A
+  #define SERIAL_6O1 0x32
+  #define SERIAL_6O2 0x3A
 #endif
 #define SERIAL_8N1 0x06
 #define SERIAL_8N2 0x0E
@@ -86,8 +96,7 @@ typedef uint8_t rx_buffer_index_t;
 #define SERIAL_7O2 0x3C
 #define SERIAL_8O2 0x3E
 
-class HardwareSerial : public Stream
-{
+class HardwareSerial : public Stream {
   protected:
     // Has any byte been written to the UART since begin()
     bool _written;
@@ -103,9 +112,13 @@ class HardwareSerial : public Stream
   public:
     HardwareSerial(uint32_t _rx, uint32_t _tx);
     HardwareSerial(PinName _rx, PinName _tx);
-    HardwareSerial(void* peripheral);
-    virtual ~HardwareSerial() { }
-    void begin(unsigned long baud) { begin(baud, SERIAL_8N1); }
+    HardwareSerial(void *peripheral, HalfDuplexMode_t halfDuplex = HALF_DUPLEX_DISABLED);
+    HardwareSerial(uint32_t _rxtx);
+    HardwareSerial(PinName _rxtx);
+    void begin(unsigned long baud)
+    {
+      begin(baud, SERIAL_8N1);
+    }
     void begin(unsigned long, uint8_t);
     void end();
     virtual int available(void);
@@ -114,26 +127,49 @@ class HardwareSerial : public Stream
     int availableForWrite(void);
     virtual void flush(void);
     virtual size_t write(uint8_t);
-    inline size_t write(unsigned long n) { return write((uint8_t)n); }
-    inline size_t write(long n) { return write((uint8_t)n); }
-    inline size_t write(unsigned int n) { return write((uint8_t)n); }
-    inline size_t write(int n) { return write((uint8_t)n); }
+    inline size_t write(unsigned long n)
+    {
+      return write((uint8_t)n);
+    }
+    inline size_t write(long n)
+    {
+      return write((uint8_t)n);
+    }
+    inline size_t write(unsigned int n)
+    {
+      return write((uint8_t)n);
+    }
+    inline size_t write(int n)
+    {
+      return write((uint8_t)n);
+    }
     using Print::write; // pull in write(str) and write(buf, size) from Print
-    operator bool() { return true; }
+    operator bool()
+    {
+      return true;
+    }
 
     void setRx(uint32_t _rx);
     void setTx(uint32_t _tx);
     void setRx(PinName _rx);
     void setTx(PinName _tx);
 
+    // Enable half-duplex mode by setting the Rx pin to NC
+    // This needs to be done before the call to begin()
+    void setHalfDuplex(void);
+    bool isHalfDuplex(void) const;
+    void enableHalfDuplexRx(void);
+
     friend class STM32LowPower;
 
     // Interrupt handlers
-    static void _rx_complete_irq(serial_t* obj);
-    static int _tx_complete_irq(serial_t* obj);
+    static void _rx_complete_irq(serial_t *obj);
+    static int _tx_complete_irq(serial_t *obj);
   private:
+    bool _rx_enabled;
     uint8_t _config;
-    void init(void);
+    unsigned long _baud;
+    void init(PinName _rx, PinName _tx);
     void configForLowPower(void);
 };
 
@@ -148,7 +184,5 @@ extern HardwareSerial Serial8;
 extern HardwareSerial Serial9;
 extern HardwareSerial Serial10;
 extern HardwareSerial SerialLP1;
-
-extern void serialEventRun(void) __attribute__((weak));
 
 #endif

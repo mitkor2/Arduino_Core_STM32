@@ -1,49 +1,26 @@
 /*
  *******************************************************************************
- * Copyright (c) 2017, STMicroelectronics
+ * Copyright (c) 2019, STMicroelectronics
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * This software component is licensed by ST under BSD 3-Clause license,
+ * the "License"; You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *                        opensource.org/licenses/BSD-3-Clause
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
- * 3. Neither the name of STMicroelectronics nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *******************************************************************************
  */
 
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
-/*----------------------------------------------------------------------------
- *        Headers
- *----------------------------------------------------------------------------*/
-#include "PeripheralPins.h"
-
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
-extern const PinName digitalPin[];
 
 // Define pin names to match digital pin number --> Dx
 // It could be used with preprocessor tests (e.g. #if PXn == 3)
@@ -58,13 +35,17 @@ extern const PinName digitalPin[];
 // !!! // x is PXn (y)
 // !!! Ex:
 // !!! ...
-// !!! #define PA4  20 // A14
+// !!! #define PA4  20 // A14 <-- if NUM_ANALOG_FIRST not defined
+// !!! or
+// !!! #define PA4  A14 // 20 <-- if NUM_ANALOG_FIRST defined
 // !!! #define PB4  21
 // !!! #define PB5  22
 // !!! #define PB3  23
 // !!! // 24 is PA4 (20)
-// !!! // 25 is PB4 (21)// #define PXn x
-// !!! #define PA2  26 // A15
+// !!! // 25 is PB4 (21)
+// !!! #define PA2  26 // A15 <-- if NUM_ANALOG_FIRST not defined
+// !!! or
+// !!! #define PA2  A15 // 26 <-- if NUM_ANALOG_FIRST defined
 // !!! ...
 //#define PXn x
 
@@ -74,10 +55,10 @@ extern const PinName digitalPin[];
 #define NUM_DIGITAL_PINS        0
 
 // Allow to define Arduino style alias for analog input pin number --> Ax
-// All pins are digital, analog inputs are a subset of digital pins
-// and must be contiguous to be able to loop on each value
-// This must be a literal with a value less than or equal to MAX_ANALOG_INPUTS
-// defined in pin_arduino.h
+// If no analog pin required then NUM_ANALOG_INPUTS could not be defined
+// or set to `0`
+// All pins are digital, analog inputs are a subset of digital pins.
+// This must be a literal
 // It is used with preprocessor tests (e.g. #if NUM_ANALOG_INPUTS > 3)
 // so an enum will not work.
 // !!!
@@ -85,15 +66,29 @@ extern const PinName digitalPin[];
 // !!! defined in digitalPin[] array in variant.cpp
 // !!!
 #define NUM_ANALOG_INPUTS       0
-// Define digital pin number of the first analog input  (i.e. which digital pin is A0)
-// First analog pin value (A0) must be greater than or equal to NUM_ANALOG_INPUTS
-#define NUM_ANALOG_FIRST        0
 
-// Below ADC, DAC and PWM definitions already done in the core
+// They are 2 possibles way to define analog pins:
+//-------------------------------------------------------------------------------------------
+//   - If they are contiguous in the digitalPin array:
+//     Simply defined `NUM_ANALOG_FIRST` and all pins Ax will be automatically defined.
+//     It define the digital pin number of the first analog input  (i.e. which digital pin is A0)
+//     First analog pin value (A0) must be greater than or equal to NUM_ANALOG_INPUTS
+//     This must be a literal with a value less than or equal to MAX_ANALOG_INPUTS
+//     defined in pin_arduino.h
+#define NUM_ANALOG_FIRST        0
+//------------------------------------OR------------------------------------------------------
+//   - If they are not contiguous in the digitalPin array:
+//     Add an analogInputPin array in the variant.cpp without defining NUM_ANALOG_FIRST
+//     In that case the defined PYn for analog pin have to define the Ax definition instead of
+//     index in digitalPin[] array:
+//     #define PA4  A14
+//-------------------------------------------------------------------------------------------
+
+
+// Below ADC and PWM definitions already done in the core
 // Could be redefined here if needed
-// ADC resolution is 12bits
-//#define ADC_RESOLUTION          12
-//#define DACC_RESOLUTION         12
+// ADC resolution is 10 bits
+//#define ADC_RESOLUTION          10
 
 // PWM resolution
 //#define PWM_RESOLUTION          8
@@ -119,12 +114,18 @@ extern const PinName digitalPin[];
 //#define PIN_WIRE_SDA            14 // Default for Arduino connector compatibility
 //#define PIN_WIRE_SCL            15 // Default for Arduino connector compatibility
 
-// Timer Definitions
-//Do not use timer used by PWM pins when possible. See PinMap_PWM in PeripheralPins.c
-#define TIMER_TONE              TIMx
+// I2C timing definitions (optional), avoid time spent to compute if defined
+// * I2C_TIMING_SM for Standard Mode (100kHz)
+// * I2C_TIMING_FM for Fast Mode (400kHz)
+// * I2C_TIMING_FMP for Fast Mode Plus (1000kHz)
+//#define I2C_TIMING_SM           0x00000000
+//#define I2C_TIMING_FM           0x00000000
+//#define I2C_TIMING_FMP          0x00000000
 
-// Do not use basic timer: OC is required
-#define TIMER_SERVO             TIMx  //TODO: advanced-control timers don't work
+// Timer Definitions (optional)
+// Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
+#define TIMER_TONE              TIM6
+#define TIMER_SERVO             TIM7
 
 // UART Definitions
 // Define here Serial instance number to map on Serial generic name
@@ -156,6 +157,24 @@ extern const PinName digitalPin[];
 // SD Read/Write timeout, default value defined in STM32SD library
 //#define SD_DATATIMEOUT          x
 
+// USB Vbus sensing. Require to have Vbus pin connected to Vbus signal.
+// Warning, pin is different depending on FullSpeed or High Speed mode used
+// See AN4879 https://www.st.com/content/st_com/en/search.html#q=AN4879-t=resources-page=1
+//#define USBD_VBUS_DETECTION_ENABLE
+
+// If the board has external USB pullup (on DP/DM depending on speed)
+// that can be controlled using a GPIO pin, define these:
+//  - If the the pullup is disabled (USB detached) by default, define
+//    USBD_ATTACH_PIN to the pin that, when written to
+//    USBD_ATTACH_LEVEL, attaches the pullup.
+//  - If the the pullup is enabled (attached) by default, define
+//    USBD_DETACH_PIN to the pin that, when written to
+//    USBD_DETACH_LEVEL, detaches the pullup.
+//#define USBD_ATTACH_PIN x
+//#define USBD_ATTACH_LEVEL LOW
+//#define USBD_DETACH_PIN x
+//#define USBD_DETACH_LEVEL LOW
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
@@ -164,23 +183,23 @@ extern const PinName digitalPin[];
  *----------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-// These serial port names are intended to allow libraries and architecture-neutral
-// sketches to automatically default to the correct port name for a particular type
-// of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
-// the first hardware serial port whose RX/TX pins are not dedicated to another use.
-//
-// SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
-//
-// SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
-//
-// SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
-//
-// SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
-//
-// SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
-//                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_MONITOR     Serial
-#define SERIAL_PORT_HARDWARE    Serial
+  // These serial port names are intended to allow libraries and architecture-neutral
+  // sketches to automatically default to the correct port name for a particular type
+  // of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
+  // the first hardware serial port whose RX/TX pins are not dedicated to another use.
+  //
+  // SERIAL_PORT_MONITOR        Port which normally prints to the Arduino Serial Monitor
+  //
+  // SERIAL_PORT_USBVIRTUAL     Port which is USB virtual serial
+  //
+  // SERIAL_PORT_LINUXBRIDGE    Port which connects to a Linux system via Bridge library
+  //
+  // SERIAL_PORT_HARDWARE       Hardware serial port, physical RX & TX pins.
+  //
+  // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
+  //                            pins are NOT connected to anything by default.
+  #define SERIAL_PORT_MONITOR     Serial
+  #define SERIAL_PORT_HARDWARE    Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */

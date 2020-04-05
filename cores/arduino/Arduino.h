@@ -26,7 +26,11 @@
                      + __GNUC_PATCHLEVEL__)
 #endif
 #if GCC_VERSION < 60300
-#error "GCC version 6.3 or higher is required"
+  #error "GCC version 6.3 or higher is required"
+#endif
+
+#ifdef __IN_ECLIPSE__
+  #include "SrcWrapper.h"
 #endif
 
 #include "wiring.h"
@@ -34,10 +38,14 @@
 /* sketch */
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif // __cplusplus
-extern void setup( void ) ;
-extern void loop( void ) ;
+// Weak empty variant initialization function.
+// May be redefined by variant files.
+extern void initVariant() __attribute__((weak));
+
+extern void setup(void) ;
+extern void loop(void) ;
 
 void yield(void);
 #ifdef __cplusplus

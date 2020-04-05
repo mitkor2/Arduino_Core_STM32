@@ -8,7 +8,7 @@
 
   This library is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU Lesser General Public License for more details.
 
   You should have received a copy of the GNU Lesser General Public
@@ -25,9 +25,9 @@ extern "C" {
 
 /*
  * \brief SAM3 products have only one reference for ADC
+ * This is kept only for compatibility with existing AVR based API.
  */
-typedef enum _eAnalogReference
-{
+typedef enum _eAnalogReference {
   AR_DEFAULT,
 } eAnalogReference ;
 
@@ -37,7 +37,7 @@ typedef enum _eAnalogReference
  *
  * \param ulMmode Should be set to AR_DEFAULT.
  */
-extern void analogReference( eAnalogReference ulMode ) ;
+extern void analogReference(eAnalogReference ulMode) ;
 
 /*
  * \brief Writes an analog value (PWM wave) to a pin.
@@ -45,7 +45,7 @@ extern void analogReference( eAnalogReference ulMode ) ;
  * \param ulPin
  * \param ulValue
  */
-extern void analogWrite( uint32_t ulPin, uint32_t ulValue ) ;
+extern void analogWrite(uint32_t ulPin, uint32_t ulValue) ;
 
 /*
  * \brief Reads the value from the specified analog pin.
@@ -54,7 +54,7 @@ extern void analogWrite( uint32_t ulPin, uint32_t ulValue ) ;
  *
  * \return Read value from selected pin, if no error.
  */
-extern uint32_t analogRead( uint32_t ulPin ) ;
+extern uint32_t analogRead(uint32_t ulPin) ;
 
 /*
  * \brief Set the resolution of analogRead return values. Default is 10 bits (range from 0 to 1023).
@@ -70,7 +70,15 @@ extern void analogReadResolution(int res);
  */
 extern void analogWriteResolution(int res);
 
-extern void analogOutputInit( void ) ;
+/*
+ * \brief Set the frequency of analogWrite. Default is PWM_FREQUENCY (1000) in Hertz.
+ *
+ * \param freq
+ */
+extern void analogWriteFrequency(uint32_t freq);
+
+
+extern void analogOutputInit(void) ;
 
 #ifdef __cplusplus
 }

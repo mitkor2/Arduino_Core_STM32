@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "variant.h"
+#include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,8 +40,8 @@ const PinName digitalPin[] = {
   PA_5,  //D13 - LED
   PB_9,  //D14
   PB_8,  //D15
-// ST Morpho
-// CN7 Left Side
+  // ST Morpho
+  // CN7 Left Side
   PC_10, //D16
   PC_12, //D17
   NC,   //D18 - BOOT0
@@ -56,12 +56,12 @@ const PinName digitalPin[] = {
   PH_1,  //D27
   PC_2,  //D28
   PC_3,  //D29
-// CN7 Right Side
+  // CN7 Right Side
   PC_11, //D30
   PD_2,  //D31
-// CN10 Left Side
+  // CN10 Left Side
   PC_9,  //D32
-// CN10 Right side
+  // CN10 Right side
   PC_8,  //D33
   PC_6,  //D34
   PC_5,  //D35
@@ -80,14 +80,23 @@ const PinName digitalPin[] = {
   PA_4,  //D48/A2
   PB_0,  //D49/A3
   PC_1,  //D50/A4
-  PC_0,  //D51/A5
-  // Duplicated pins in order to be aligned with PinMap_ADC
-  PA_7,  //D52/A6  = D11
-  PA_6,  //D53/A7  = D12
-  PC_2,  //D54/A8  = D28
-  PC_3,  //D55/A9  = D29
-  PC_5,  //D56/A10 = D35
-  PC_4   //D57/A11 = D45
+  PC_0   //D51/A5
+};
+
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  46, //A0
+  47, //A1
+  48, //A2
+  49, //A3
+  50, //A4
+  51, //A5
+  11, //A6
+  12, //A7
+  28, //A8
+  29, //A9
+  35, //A10
+  45  //A11
 };
 
 #ifdef __cplusplus
@@ -138,10 +147,9 @@ WEAK void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLP = 7;
   RCC_OscInitStruct.PLL.PLLQ = 4;
 
-  if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
 
   /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2
@@ -151,10 +159,9 @@ WEAK void SystemClock_Config(void)
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-  if(HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
     /* Initialization Error */
-    while(1);
+    while (1);
   }
 }
 
